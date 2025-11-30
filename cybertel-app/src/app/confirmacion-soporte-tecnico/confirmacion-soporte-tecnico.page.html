@@ -1,0 +1,34 @@
+<!-- Cabecera de la página -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal -->
+<ion-content class="ion-padding">
+
+  <!-- Logo centrado -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" />
+  </div>
+
+  <!-- Mensajes de confirmación -->
+  <h1>¡Solicitud enviada!</h1>
+  <h2>Un técnico se comunicará contigo pronto.</h2>
+
+  <p>
+    Gracias por confiar en <strong>CYBERTEL ASP</strong>.  
+  </p>
+
+  <!-- Botón para volver al menú principal -->
+  <ion-button expand="block" class="ion-margin-top" (click)="volverAlMenu()">
+    Volver al Menú Principal
+  </ion-button>
+
+  <!-- Botón para registrar otra solicitud -->
+  <ion-button expand="block" fill="clear" (click)="nuevaSolicitud()">
+    Registrar otra solicitud
+  </ion-button>
+
+</ion-content>

@@ -1,0 +1,64 @@
+<!-- Cabecera superior -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal -->
+<ion-content class="ion-padding">
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Título -->
+  <h1>Acerca de mi Cuenta</h1>
+
+  <!-- Subtítulo centrado -->
+  <p class="subtitulo">Estos son tus datos personales registrados</p>
+
+  <!-- Lista estilo tarjetas oscuras -->
+  <ion-list>
+
+    <!-- Nombre completo -->
+    <ion-item class="cuenta-item" lines="none">
+
+      <!-- Texto alineado a la izquierda -->
+      <ion-label class="campo-titulo">Nombre Completo:</ion-label>
+      <p class="campo-valor">{{ usuario.fullName }}</p>
+
+    </ion-item>
+
+    <!-- Teléfono -->
+    <ion-item class="cuenta-item" lines="none">
+      <ion-label class="campo-titulo">Teléfono:</ion-label>
+      <p class="campo-valor">{{ usuario.phone }}</p>
+    </ion-item>
+
+    <!-- Correo -->
+    <ion-item class="cuenta-item" lines="none">
+      <ion-label class="campo-titulo">Correo Electrónico:</ion-label>
+      <p class="campo-valor">{{ usuario.email }}</p>
+    </ion-item>
+
+    <!-- Usuario -->
+    <ion-item class="cuenta-item" lines="none">
+      <ion-label class="campo-titulo">Usuario:</ion-label>
+      <p class="campo-valor">{{ usuario.username }}</p>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Botón para volver al Menu Principal -->
+  <ion-button
+    expand="block"
+    fill="clear"
+    color="medium"
+    (click)="volverAlMenu()"
+  >
+    Volver al Menú Principal
+  </ion-button>
+
+</ion-content>

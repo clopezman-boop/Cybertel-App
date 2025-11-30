@@ -1,0 +1,56 @@
+
+ion-header {
+  --background: #003366; /* Azul corporativo */
+  --color: white;        /* Texto blanco */
+}
+
+/* Logo centrado */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  max-width: 200px;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: Helvetica;
+  margin-top: 15px;
+  color: #ffffff; /* Texto claro */
+}
+
+/* Subtítulo o descripción */
+p {
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: Arial;
+}
+
+/* Lista de opciones del menú */
+ion-list {
+  background: transparent;
+  margin-top: 10px;
+}
+
+/* Cada ítem del menú */
+ion-item {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  --background: #ffffff;     /* Fondo blanco */
+  --color: #000000;          /* Texto negro */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo de botón de cerrar sesión */
+ion-button {
+  --border-radius: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+}

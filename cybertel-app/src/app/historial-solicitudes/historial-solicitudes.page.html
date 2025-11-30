@@ -1,0 +1,85 @@
+<!-- Cabecera -->
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Título visible -->
+    <ion-title></ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal -->
+<ion-content class="ion-padding">
+
+  <!-- Logo superior -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Encabezado principal -->
+  <h1>Historial de Solicitudes</h1>
+
+  <!-- Subtítulo descriptivo -->
+  <p class="subtitulo">
+    Todas tus solicitudes, con su estado actual
+  </p>
+
+  <!-- LISTA COMPLETA DE SOLICITUDES -->
+  <ion-list>
+
+    <!-- Recorremos cada solicitud del usuario -->
+    <ion-item *ngFor="let s of solicitudes" class="solicitud-item" lines="none">
+
+      <!-- Contenedor de texto -->
+      <ion-label>
+
+        <!-- Tipo de solicitud -->
+        <h2>
+          {{ s.tipo === 'producto' ? 'SOLICITUD DE PRODUCTO' : 'SOLICITUD DE SOPORTE' }}
+        </h2>
+
+        <!-- PRODUCTO -->
+        <p class="descripcion" *ngIf="s.tipo === 'producto'">
+          <strong>PRODUCTO:</strong> {{ s.productoLista }}
+        </p>
+
+        <!-- DISPOSITIVO -->
+        <p class="descripcion" *ngIf="s.tipo === 'soporte'">
+          <strong>DISPOSITIVO:</strong> {{ s.tipoDispositivo }}
+        </p>
+
+        <!-- DESCRIPCIÓN -->
+        <p class="descripcion" *ngIf="s.tipo === 'soporte'">
+          <strong>DESCRIPCIÓN:</strong> {{ s.descripcion }}
+        </p>
+
+        <!-- FECHA -->
+        <p class="fecha">
+          {{ s.fecha | date:'dd MMM yyyy - HH:mm' }}
+        </p>
+
+      </ion-label>
+
+      <!-- ESTADO -->
+      <ion-badge
+        class="estado-badge"
+        [color]="getEstadoColor(s.estado)"
+        slot="end"
+      >
+        {{ s.estado }}
+      </ion-badge>
+
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón para volver al menú principal -->
+  <ion-button
+    expand="block"
+    fill="clear"
+    color="medium"
+    (click)="volverAlMenu()"
+  >
+    Volver al Menú Principal
+  </ion-button>
+
+</ion-content>

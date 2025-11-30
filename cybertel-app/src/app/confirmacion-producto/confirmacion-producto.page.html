@@ -1,0 +1,32 @@
+<!-- Cabecera con formato uniforme -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Logo de la empresa -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Mensaje de confirmación -->
+  <h1>¡Solicitud Enviada con Éxito!</h1>
+  <h2>Un asesor se pondrá en contacto contigo pronto.</h2>
+
+  <!-- Texto de agradecimiento e indicación -->
+  <p>
+    Gracias por confiar en <strong>CYBERTEL ASP</strong>.  
+    Puedes volver al menú principal o explorar otros productos.
+  </p>
+
+  <!-- Botones de navegación -->
+  <ion-button expand="block" class="ion-margin-top" (click)="volverAlMenu()">
+    Volver al Menú Principal
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" color="medium" (click)="verCatalogo()">
+    Ver Catálogo de Productos
+  </ion-button>
+</ion-content>

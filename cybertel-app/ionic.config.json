@@ -1,0 +1,7 @@
+{
+  "name": "cybertel-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

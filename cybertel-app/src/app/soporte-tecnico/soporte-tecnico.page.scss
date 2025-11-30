@@ -1,0 +1,50 @@
+/* Estilos de Soporte Técnico */
+ion-header {
+  --background: #003366; /* Color de fondo */
+  --color: white; /* Color del texto */
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+/* Subtítulo */
+h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 20px;
+  font-family: Helvetica;
+}
+
+/* Texto descriptivo */
+p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+/* Campos de formulario */
+ion-item {
+  margin-bottom: 20px;
+}
+
+/* Botones */
+ion-button {
+  --border-radius: 12px;
+  font-size: 16px;
+}
+
+/* Logo centrado */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  max-width: 317px;
+}

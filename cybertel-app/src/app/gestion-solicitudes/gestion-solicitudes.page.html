@@ -1,0 +1,106 @@
+<!-- CABECERA -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<ion-content class="ion-padding">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <h1>Gestión de Solicitudes</h1>
+  <p class="subtitulo">Revisa las solicitudes y toma acción</p>
+
+  <!-- LISTADO DE SOLICITUDES -->
+  <div *ngFor="let s of solicitudes" class="solicitud-item">
+
+    <!-- TÍTULO DEPENDIENDO DEL TIPO -->
+    <h2>
+      {{ s.type === 'producto' ? 'Solicitud de Producto' : 'Solicitud de Soporte' }}
+    </h2>
+
+    <!-- NOMBRE DEL CLIENTE -->
+    <p class="descripcion">
+      {{ s.clienteNombre || ('UID: ' + s.uid) }}
+    </p>
+
+    <!-- FECHA -->
+    <p class="fecha">Fecha: {{ s.fechaFormateada }}</p>
+
+    <!-- DATOS PARA SOLICITUDES DE PRODUCTO -->
+    <div *ngIf="s.type === 'producto'">
+      <p class="descripcion"><strong>Teléfono:</strong> {{ s.telefono }}</p>
+      <p class="descripcion"><strong>Dirección:</strong> {{ s.direccion }}</p>
+
+      <div *ngFor="let p of s.productos; let i = index">
+        <p class="descripcion">
+          <strong>Producto {{ i + 1 }}:</strong> {{ p.nombre }} — S/ {{ p.precio }}
+        </p>
+      </div>
+    </div>
+
+    <!-- DATOS PARA SOLICITUDES DE SOPORTE -->
+    <div *ngIf="s.type === 'soporte'">
+      <p class="descripcion"><strong>Dispositivo:</strong> {{ s.tipoDispositivo }}</p>
+      <p class="descripcion"><strong>Descripción:</strong> {{ s.descripcion }}</p>
+
+      <!-- SI YA TIENE CITA PROGRAMADA -->
+      <p *ngIf="s.cita">
+        <strong>Cita programada:</strong> {{ s.citaFormateada }}
+      </p>
+
+      <!-- BOTON QUE APRE POPUP -->
+      <ion-button expand="block" (click)="abrirPopup(s)">
+        Agendar Cita
+      </ion-button>
+    </div>
+
+    <!-- ESTADO -->
+    <p class="descripcion">
+      <strong>Estado:</strong>
+      <ion-badge class="estado-badge" [color]="getEstadoColor(s.estado)">
+        {{ s.estado }}
+      </ion-badge>
+    </p>
+
+    <!-- CAMBIAR ESTADO -->
+    <ion-button expand="block" (click)="cambiarEstado(s)">
+      Cambiar estado
+    </ion-button>
+
+  </div>
+
+  <!-- VOLVER AL PANEL ADMIN -->
+  <ion-button expand="block" fill="clear" color="medium" (click)="volverAlPanel()">
+    Volver al Panel Principal
+  </ion-button>
+
+</ion-content>
+
+<!-- POPUP PERSONALIZADO PARA AGENDAR CITA -->
+<div class="popup-fondo" *ngIf="popupAbierto">
+  <div class="popup-contenedor">
+
+    <h2>Agendar Cita</h2>
+
+    <!-- Selector de fecha/hora -->
+    <ion-item>
+      <ion-label>Fecha y Hora</ion-label>
+
+      <ion-datetime
+        presentation="date-time"
+        (ionChange)="onFechaHoraChange($event)">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- Botones -->
+    <ion-button expand="block" (click)="confirmarCita()">Confirmar</ion-button>
+    <ion-button expand="block" color="medium" (click)="cerrarPopup()">Cancelar</ion-button>
+
+  </div>
+</div>

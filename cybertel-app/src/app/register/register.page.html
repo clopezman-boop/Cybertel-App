@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Logo de la empresa centrada -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Título y subtítulo -->
+  <h1>Crea una cuenta</h1>
+  <h2>Introduce los datos correspondientes para la creación del usuario</h2>
+
+  <!-- Formulario de registro con enlace bidireccional mediante ngModel -->
+  <form (submit)="onSubmit()">
+    
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" [(ngModel)]="fullName" name="fullName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input type="tel" [(ngModel)]="phone" name="phone" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
+
+    <!-- Botón para enviar el registro -->
+    <ion-button expand="block" type="submit" class="ion-margin-top">
+      Registrarte
+    </ion-button>
+
+    <!-- Botón adicional para regresar al login -->
+  <ion-button expand="block" fill="clear" (click)="goToLogin()" type="button">
+  Volver al Inicio de Sesión
+</ion-button>
+
+  </form>
+
+  <!-- Texto de términos y condiciones -->
+  <p class="terms-text">
+    Al hacer clic en registrarte, aceptas nuestros 
+    <a href="#">Términos de Servicio</a> y nuestra 
+    <a href="#">Política de Privacidad</a>
+  </p>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<!-- Cabecera superior -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Logo centrado -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Título principal -->
+  <h2>Panel del Administrador</h2>
+  <p>Seleccione una opción de gestión o consulta</p>
+
+  <!-- Opciones de menú -->
+  <ion-list>
+
+    <ion-item button detail="true" (click)="goTo('gestion-solicitudes')">
+      <ion-label>Gestión de Solicitudes</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goTo('detalle-historial-solicitudes')">
+      <ion-label>Historial de Solicitudes</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goTo('acerca-de-mi-cuenta-admin')">
+      <ion-label>Acerca de mi Cuenta</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Botón de cierre de sesión -->
+  <ion-button expand="block" fill="clear" color="medium" (click)="logout()">
+    Cerrar sesión
+  </ion-button>
+
+</ion-content>

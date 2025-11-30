@@ -1,0 +1,44 @@
+<!-- Cabecera superior -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Logo de la empresa -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Título principal -->
+  <h1>Notificaciones del Cliente</h1>
+  <p>Mensajes automáticos sobre el estado de tus solicitudes</p>
+
+  <!-- Lista de notificaciones -->
+  <ion-list>
+    <ion-item *ngFor="let notif of notificaciones" [class.fade-out]="notif.animando">
+      <ion-label>
+        <h2>{{ notif.mensaje }}</h2>
+        <!-- Mostrar fecha formateada y tiempo relativo -->
+        <p>{{ notif.fechaFormateada }} — {{ notif.tiempoRelativo }}</p>
+      </ion-label>
+
+      <!-- Botón individual para eliminar una notificación -->
+      <div class="delete-icon" (click)="borrarNotificacion(notif.id)" slot="end">
+        <span class="x">×</span>
+      </div>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Botón para borrar todas las notificaciones -->
+  <ion-button expand="block" color="danger" (click)="borrarNotificaciones()">
+    Borrar todas las notificaciones
+  </ion-button>
+
+  <!-- Botón para regresar al menú principal -->
+  <ion-button expand="block" fill="clear" color="medium" (click)="volverAlMenu()">
+    Volver al Menú Principal
+  </ion-button>
+</ion-content>

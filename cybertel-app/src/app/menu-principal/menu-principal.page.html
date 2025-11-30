@@ -1,0 +1,47 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Logo de la empresa centrada -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" alt="Logo CYBERTEL ASP" />
+  </div>
+
+  <!-- Título principal dentro del panel del cliente -->
+  <h1>Menú Principal</h1>
+
+  <!-- Subtítulo de bienvenida -->
+  <p>Seleccione una opción para continuar</p>
+
+  <!-- Opciones del menú donde cada uno redirige a otra pagina -->
+  <ion-list>
+    <ion-item button detail="true" (click)="goTo('catalogo')">
+      <ion-label>Catálogos de productos</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goTo('soporte-tecnico')"> 
+      <ion-label>Soporte técnico</ion-label> 
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goTo('historial-solicitudes')">
+      <ion-label>Historial de solicitudes</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goTo('notificaciones-cliente')">
+      <ion-label>Notificaciones</ion-label>
+    </ion-item>
+
+    <ion-item button detail="true" (click)="goTo('acerca-de-mi-cuenta')">
+      <ion-label>Acerca de mi cuenta</ion-label>
+    </ion-item>
+  </ion-list> 
+
+  <!-- Botón para cerrar sesión -->
+  <ion-button expand="block" fill="clear" color="medium" (click)="logout()">
+    Cerrar sesión
+  </ion-button>
+</ion-content>

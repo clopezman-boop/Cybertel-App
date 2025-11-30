@@ -1,0 +1,43 @@
+<!-- Cabecera superior -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" />
+  </div>
+
+  <!-- Título -->
+  <h1>Soporte Técnico</h1>
+  <p>Describe tu problema para que un técnico pueda apoyarte</p>
+
+  <!-- Formulario -->
+  <form (ngSubmit)="registrarSolicitud()">
+
+    <ion-item>
+      <ion-label position="floating">Tipo de dispositivo</ion-label>
+      <ion-input type="text" [(ngModel)]="tipoDispositivo" name="tipoDispositivo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción del problema</ion-label>
+      <ion-textarea [(ngModel)]="descripcion" name="descripcion" required></ion-textarea>
+    </ion-item>
+
+    <!-- Botón enviar -->
+    <ion-button expand="block" type="submit" class="ion-margin-top">
+      Enviar Solicitud
+    </ion-button>
+
+    <ion-button expand="block" fill="clear" color="medium" (click)="volverAlMenu()">
+      Volver al Menú
+    </ion-button>
+
+  </form>
+
+</ion-content>

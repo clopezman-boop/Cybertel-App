@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="assets/img/logo.PNG" />
+  </div>
+
+  <h1>Solicitud de Producto</h1>
+  <p>Verifica tus datos y los productos seleccionados</p>
+
+  <!-- Formulario de datos del cliente -->
+  <form (ngSubmit)="enviarSolicitud()">
+
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" [(ngModel)]="nombreCompleto" name="nombreCompleto" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input type="tel" [(ngModel)]="telefono" name="telefono" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input type="text" [(ngModel)]="direccion" name="direccion" required></ion-input>
+    </ion-item>
+
+    <!-- Lista del carrito -->
+    <h2 class="ion-margin-top">Productos Seleccionados</h2>
+
+    <ion-card *ngFor="let item of carrito; let i = index">
+      <img [src]="item.imagen" />
+
+      <ion-card-header>
+        <ion-card-title>{{ item.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ item.marca }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p><strong>Precio:</strong> {{ item.precio | currency:'S/ ' }}</p>
+
+        <!-- Eliminar producto -->
+        <ion-button fill="clear" color="danger" (click)="eliminarProducto(i)">
+          Eliminar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Botón de Enviar solicitud -->
+    <ion-button expand="block" type="submit" class="ion-margin-top">
+      Enviar Solicitud
+    </ion-button>
+
+    <!-- Regresar al Menú -->
+    <ion-button expand="block" fill="clear" color="medium" (click)="volverAlMenu()">
+      Volver al Menú
+    </ion-button>
+
+  </form>
+
+</ion-content>
